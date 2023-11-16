@@ -56,7 +56,8 @@
 // Game
 int life;
 int score;
-
+char * buffert;
+uint8_t buffrec[5];
 // Screen
 extern ili9341_t *_screen;
 
@@ -130,6 +131,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM12_Init();
+  MX_UART5_Init();
   /* USER CODE BEGIN 2 */
 	
 	// Screen
@@ -144,7 +146,8 @@ int main(void)
 		itsNotSupported,
 		itnNormalized);
 
-
+	// interuption provenant du video  sam
+	//__HAL_UART_ENABLE_IT(&huart5, UART_IT_TXE);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -156,6 +159,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		initGame();
 		el_condor();
+		//buffert = "hello";
+		//HAL_UART_Transmit(&huart5, (uint8_t *) buffert, 8, 1);
 		
 		while(life) {
 			while(!frameUp) {

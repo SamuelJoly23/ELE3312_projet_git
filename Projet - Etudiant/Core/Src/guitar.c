@@ -6,6 +6,7 @@
 #include "math.h"
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 
 ili9341_t *_screen;
 
