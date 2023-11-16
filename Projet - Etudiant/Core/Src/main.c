@@ -73,8 +73,12 @@ int full_timer;
 // Ultrason
 extern volatile float position_us; //TODO
 
-// initialisation variable 2e guitare
-uint8_t nextVoice[8];
+// initialisation variables
+uint8_t txdata = 1;
+uint8_t rxdata = 1;
+extern int POSX[MAX_NOTE + 1];
+extern unsigned char voice1[MAX_TIME];
+extern int current_time;
 
 /* USER CODE END PV */
 
@@ -97,6 +101,14 @@ void HAL_SYSTICK_Callback(void) {
 	}
 }
 
+
+void HAL_UART_RxCpltCallBack(UART_HandleTypeDef *huart) {
+	position_us = rxdata;
+}
+
+void HAL_UART_TxCpltCallBack(UART_HandleTypeDef *huart) {
+	
+}
 
 /* USER CODE END 0 */
 
@@ -147,12 +159,10 @@ int main(void)
 		NULL, NULL,
 		itsNotSupported,
 		itnNormalized);
-
-	// interuption provenant du video  sam
-	//__HAL_UART_ENABLE_IT(&huart5, UART_IT_TXE);
 	
 	// Initialisation du transfert des donnees
-	HAL_UART_Transmit_DMA(&huart5,nextVoice ,8);
+	HAL_UART_Transmit_DMA(&huart5,nextVoice ,8); // transmission en DMA
+	HAL_UART_Receive_IT(&huart5, ); // reception par interruptions
 	
   /* USER CODE END 2 */
 
@@ -165,7 +175,6 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		initGame();
 		el_condor();
-		//buffert = "hello";
 		//HAL_UART_Transmit(&huart5, (uint8_t *) buffert, 8, 1);
 		
 		while(life) {
