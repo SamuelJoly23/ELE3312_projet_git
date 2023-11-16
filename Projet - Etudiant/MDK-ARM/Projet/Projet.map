@@ -203,7 +203,6 @@ Section Cross References
     guitar.o(.text.next_state) refers to guitar.o(.bss.current_time) for current_time
     guitar.o(.text.next_state) refers to guitar.o(.bss.voice1) for voice1
     guitar.o(.text.next_state) refers to main.o(.bss.life) for life
-    guitar.o(.text.next_state) refers to guitar.o(.data.position_us) for position_us
     guitar.o(.ARM.exidx.text.next_state) refers to guitar.o(.text.next_state) for [Anonymous Symbol]
     guitar.o(.text.gameOver) refers to guitar.o(.bss._screen) for _screen
     guitar.o(.text.gameOver) refers to ili9341_gfx.o(.text.ili9341_fill_screen) for ili9341_fill_screen
@@ -231,10 +230,6 @@ Section Cross References
     main.o(.text.HAL_SYSTICK_Callback) refers to main.o(.data.fps) for fps
     main.o(.text.HAL_SYSTICK_Callback) refers to main.o(.data.frameUp) for frameUp
     main.o(.ARM.exidx.text.HAL_SYSTICK_Callback) refers to main.o(.text.HAL_SYSTICK_Callback) for [Anonymous Symbol]
-    main.o(.text.HAL_UART_RxCpltCallBack) refers to main.o(.data.rxdata) for rxdata
-    main.o(.text.HAL_UART_RxCpltCallBack) refers to guitar.o(.data.position_us) for position_us
-    main.o(.ARM.exidx.text.HAL_UART_RxCpltCallBack) refers to main.o(.text.HAL_UART_RxCpltCallBack) for [Anonymous Symbol]
-    main.o(.ARM.exidx.text.HAL_UART_TxCpltCallBack) refers to main.o(.text.HAL_UART_TxCpltCallBack) for [Anonymous Symbol]
     main.o(.text.main) refers to stm32f4xx_hal.o(.text.HAL_Init) for HAL_Init
     main.o(.text.main) refers to main.o(.text.SystemClock_Config) for SystemClock_Config
     main.o(.text.main) refers to gpio.o(.text.MX_GPIO_Init) for MX_GPIO_Init
@@ -255,18 +250,6 @@ Section Cross References
     main.o(.text.main) refers to guitar.o(.text.display_guitar) for display_guitar
     main.o(.text.main) refers to guitar.o(.text.next_state) for next_state
     main.o(.text.main) refers to guitar.o(.text.display_score) for display_score
-    main.o(.text.main) refers to guitar.o(.bss.current_time) for current_time
-    main.o(.text.main) refers to guitar.o(.bss.voice1) for voice1
-    main.o(.text.main) refers to main.o(.data.txdata) for txdata
-    main.o(.text.main) refers to usart.o(.bss.huart5) for huart5
-    main.o(.text.main) refers to stm32f4xx_hal_uart.o(.text.HAL_UART_Transmit_DMA) for HAL_UART_Transmit_DMA
-    main.o(.text.main) refers to main.o(.data.rxdata) for rxdata
-    main.o(.text.main) refers to stm32f4xx_hal_uart.o(.text.HAL_UART_Receive_IT) for HAL_UART_Receive_IT
-    main.o(.text.main) refers to guitar.o(.bss.POSX) for POSX
-    main.o(.text.main) refers to f2d.o(.text) for __aeabi_f2d
-    main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str
-    main.o(.text.main) refers to printfa.o(i.__0printf) for printf
-    main.o(.text.main) refers to stm32f4xx_hal.o(.text.HAL_Delay) for HAL_Delay
     main.o(.text.main) refers to guitar.o(.text.gameOver) for gameOver
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     main.o(.text.SystemClock_Config) refers to memseta.o(.text) for __aeabi_memclr4
@@ -275,9 +258,6 @@ Section Cross References
     main.o(.text.SystemClock_Config) refers to stm32f4xx_hal_rcc.o(.text.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
     main.o(.ARM.exidx.text.SystemClock_Config) refers to main.o(.text.SystemClock_Config) for [Anonymous Symbol]
     main.o(.ARM.exidx.text.Error_Handler) refers to main.o(.text.Error_Handler) for [Anonymous Symbol]
-    main.o(.text.fputc) refers to usart.o(.bss.huart2) for huart2
-    main.o(.text.fputc) refers to stm32f4xx_hal_uart.o(.text.HAL_UART_Transmit) for HAL_UART_Transmit
-    main.o(.ARM.exidx.text.fputc) refers to main.o(.text.fputc) for [Anonymous Symbol]
     gpio.o(.text.MX_GPIO_Init) refers to stm32f4xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     gpio.o(.text.MX_GPIO_Init) refers to stm32f4xx_hal_gpio.o(.text.HAL_GPIO_Init) for HAL_GPIO_Init
     gpio.o(.ARM.exidx.text.MX_GPIO_Init) refers to gpio.o(.text.MX_GPIO_Init) for [Anonymous Symbol]
@@ -1334,10 +1314,10 @@ Section Cross References
     rand.o(.text) refers to rand.o(.data) for .data
     printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0fprintf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0fprintf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0printf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0printf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
     printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
@@ -1347,10 +1327,10 @@ Section Cross References
     printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
     printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0vfprintf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0vfprintf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0vprintf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0vprintf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
     printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
@@ -1417,6 +1397,10 @@ Section Cross References
     entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
     entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text.main) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text.main) for main
+    fputc.o(i.fputc) refers (Special) to iusesemip.o(.text) for __I$use$semihosting$fputc
+    fputc.o(i.fputc) refers (Special) to semi.o(.text) for __semihosting_library_function
+    fputc_h.o(i._fputc$hlt) refers (Special) to iusesemip.o(.text) for __I$use$semihosting$fputc
+    fputc_h.o(i._fputc$hlt) refers (Special) to semi.o(.text) for __semihosting_library_function
     fepilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     depilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
@@ -1532,15 +1516,12 @@ Removing Unused input sections from the image.
     Removing guitar.o(.data.FREQX), (64 bytes).
     Removing main.o(.text), (0 bytes).
     Removing main.o(.ARM.exidx.text.HAL_SYSTICK_Callback), (8 bytes).
-    Removing main.o(.text.HAL_UART_RxCpltCallBack), (38 bytes).
-    Removing main.o(.ARM.exidx.text.HAL_UART_RxCpltCallBack), (8 bytes).
-    Removing main.o(.text.HAL_UART_TxCpltCallBack), (8 bytes).
-    Removing main.o(.ARM.exidx.text.HAL_UART_TxCpltCallBack), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.exidx.text.SystemClock_Config), (8 bytes).
     Removing main.o(.ARM.exidx.text.Error_Handler), (8 bytes).
-    Removing main.o(.ARM.exidx.text.fputc), (8 bytes).
     Removing main.o(.data.tempoNextNote), (4 bytes).
+    Removing main.o(.data.txdata), (1 bytes).
+    Removing main.o(.data.rxdata), (1 bytes).
     Removing main.o(.bss.score), (4 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
     Removing gpio.o(.text), (0 bytes).
@@ -2370,17 +2351,25 @@ Removing Unused input sections from the image.
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_DeInit), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UART_MspDeInit), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_MspDeInit), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.HAL_UART_Transmit), (334 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_Transmit), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.UART_WaitOnFlagUntilTimeout), (210 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_WaitOnFlagUntilTimeout), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UART_Receive), (356 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_Receive), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UART_Transmit_IT), (162 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_Transmit_IT), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.HAL_UART_Receive_IT), (120 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_Receive_IT), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.UART_Start_Receive_IT), (110 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_Start_Receive_IT), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.HAL_UART_Transmit_DMA), (272 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_Transmit_DMA), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.UART_DMATransmitCplt), (122 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_DMATransmitCplt), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.UART_DMATxHalfCplt), (22 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_DMATxHalfCplt), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.UART_DMAError), (124 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_DMAError), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UART_Receive_DMA), (120 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_Receive_DMA), (8 bytes).
@@ -2392,6 +2381,7 @@ Removing Unused input sections from the image.
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_DMAResume), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UART_DMAStop), (204 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_DMAStop), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.UART_EndTxTransfer), (54 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_EndTxTransfer), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_EndRxTransfer), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UARTEx_ReceiveToIdle), (484 bytes).
@@ -2434,6 +2424,7 @@ Removing Unused input sections from the image.
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_Transmit_IT), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.UART_EndTransmit_IT), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_TxCpltCallback), (8 bytes).
+    Removing stm32f4xx_hal_uart.o(.text.HAL_UART_TxHalfCpltCallback), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_TxHalfCpltCallback), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.ARM.exidx.text.HAL_UART_RxCpltCallback), (8 bytes).
     Removing stm32f4xx_hal_uart.o(.text.HAL_UART_RxHalfCpltCallback), (8 bytes).
@@ -2462,6 +2453,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f4xx.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing ffltl.o(.text), (44 bytes).
     Removing dfixi.o(.text), (62 bytes).
+    Removing f2d.o(.text), (38 bytes).
     Removing fepilogue.o(.text), (110 bytes).
 
-1027 unused section(s) (total 85509 bytes) removed from the image.
+1035 unused section(s) (total 86855 bytes) removed from the image.

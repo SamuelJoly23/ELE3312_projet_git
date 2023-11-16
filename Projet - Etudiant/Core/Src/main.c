@@ -76,10 +76,11 @@ extern volatile float position_us; //TODO
 // initialisation variables
 uint8_t txdata = 1;
 uint8_t rxdata = 1;
+/*
 extern int POSX[MAX_NOTE + 1];
 extern unsigned char voice1[MAX_TIME];
 extern int current_time;
-
+*/
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,12 +91,13 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+/*
 #ifndef __GNUC__
 #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-#endif /* __GNUC__ */
+*/
+//#endif /* __GNUC__ */
 
 
 void HAL_SYSTICK_Callback(void) {
@@ -108,7 +110,7 @@ void HAL_SYSTICK_Callback(void) {
 	}
 }
 
-
+/*
 void HAL_UART_RxCpltCallBack(UART_HandleTypeDef *huart) {
 	position_us = rxdata;
 }
@@ -116,7 +118,7 @@ void HAL_UART_RxCpltCallBack(UART_HandleTypeDef *huart) {
 void HAL_UART_TxCpltCallBack(UART_HandleTypeDef *huart) {
 	
 }
-
+*/
 /* USER CODE END 0 */
 
 /**
@@ -194,6 +196,7 @@ int main(void)
 			display_score();
 			
 			// added code
+			/*
 			txdata = voice1[current_time];
 			HAL_UART_Transmit_DMA(&huart5, &txdata, sizeof(txdata));
 			HAL_UART_Receive_IT(&huart5, &rxdata, sizeof(rxdata));
@@ -201,6 +204,7 @@ int main(void)
 			
 			printf("Potentiometre : %.2f\r\n", position_us);
 			HAL_Delay(500);
+			*/
 			display_guitar(position_us);
 			
 			
@@ -260,19 +264,6 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 // code from labo 2 to use putty
-/**
-* @brief Retargets the C library printf function to the USART.
-* @param None
-* @retval None
-*/
-PUTCHAR_PROTOTYPE
-{
-	/* Place your implementation of fputc here */
-	/* e.g. write a character to the USART2 and Loop until the end
-	of transmission */
-	HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
-	return ch;
-}
 
 
 /* USER CODE END 4 */
