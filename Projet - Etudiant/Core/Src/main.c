@@ -56,8 +56,7 @@
 // Game
 int life;
 int score;
-char * buffert;
-uint8_t buffrec[5];
+
 // Screen
 extern ili9341_t *_screen;
 
@@ -73,6 +72,9 @@ int full_timer;
 
 // Ultrason
 extern volatile float position_us; //TODO
+
+// initialisation variable 2e guitare
+uint8_t nextVoice[8];
 
 /* USER CODE END PV */
 
@@ -148,6 +150,10 @@ int main(void)
 
 	// interuption provenant du video  sam
 	//__HAL_UART_ENABLE_IT(&huart5, UART_IT_TXE);
+	
+	// Initialisation du transfert des donnees
+	HAL_UART_Transmit_DMA(&huart5,nextVoice ,8);
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
