@@ -21,13 +21,21 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\samue\OneDrive\Documents\ELE3312 LAB\projectV1\Projet - Etudiant\Projet - Etudiant\MDK-ARM\Projet.uvprojx
-Project File Date:  11/10/2023
+C:\Users\samue\OneDrive\Documents\ELE3312 LAB\ELE3312_projet_git\Projet - Etudiant\MDK-ARM\Projet.uvprojx
+Project File Date:  11/16/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Projet'
-"Projet\Projet.axf" - 0 Error(s), 0 Warning(s).
+linking...
+Projet\Projet.axf: Error: L6218E: Undefined symbol __use_two_region_memory (referred from startup_stm32f446xx.o).
+Projet\Projet.axf: Error: L6218E: Undefined symbol __heap_base (referred from malloc.o).
+Projet\Projet.axf: Error: L6218E: Undefined symbol __heap_limit (referred from malloc.o).
+Projet\Projet.axf: Error: L6218E: Undefined symbol __initial_sp (referred from entry2.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+"Projet\Projet.axf" - 4 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,6 +59,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
+Target not created.
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
