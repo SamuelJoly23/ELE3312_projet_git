@@ -192,16 +192,18 @@ int main(void)
 						
 			txdata = voice1[current_time];
 //			HAL_Delay(200);
-//			position_us += 20;
-//			if (position_us > 1600) position_us = 0;
+			//position_us += 20;
+			//if (position_us > 1600) position_us = 0;
 			HAL_UART_Transmit_DMA(&huart5, &txdata, sizeof(txdata));
 			HAL_UART_Receive_IT(&huart5, &rxdata, sizeof(rxdata));
 			//position_us = POSX[rxdata];
 			
 			position_us = 1750 * (POSX[rxdata])/320;
 			
-			printf("Potentiometre : %.2f\r\n", position_us);
-			HAL_Delay(50);
+			//printf("Position_us : %.2f\r\n", position_us);
+			printf("Rx : %.2f\r\n", (double)POSX[txdata]);
+			printf("Tx : %.2f\r\n", (double)POSX[rxdata]);
+			HAL_Delay(500);
 			
 			
 			display_guitar(position_us);
