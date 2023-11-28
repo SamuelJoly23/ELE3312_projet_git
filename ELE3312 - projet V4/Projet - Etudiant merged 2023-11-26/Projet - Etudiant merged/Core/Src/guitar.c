@@ -160,7 +160,7 @@ void next_state() {
 	if (guitar.note != voice1[current_time]) life--;
 	current_time++;
 	if (current_time == MAX_TIME) current_time = 0;
-
+	
 //DEBUG AUTOPLAY
 	int posx = (320*voice1[current_time]-160)/MAX_NOTE;
 	position_us = 1750 * posx/320;

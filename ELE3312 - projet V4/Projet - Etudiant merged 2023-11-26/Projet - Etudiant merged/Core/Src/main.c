@@ -138,7 +138,6 @@ void HAL_SYSTICK_Callback(void) {
 	full_timer++;
 	timerFPS++;
 	
-	
 	if (timerFPS >= fps){
 		frameUp = 1;
 		timerFPS = 0;
@@ -275,6 +274,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) {
 		 flag_captured = 0;
 		 
 	//	 fselect = getFrequency(distanceCm);
+		 
 		 ID_note = getIdNote(distanceCm); // recupere le id note 
 		frequency1 = getFrequency(ID_note); // recupere la frequence avec le id note
 	 }
